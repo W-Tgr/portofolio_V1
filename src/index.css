@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(33, 136, 255, 0.3) rgba(13, 17, 23, 0.8);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #0d1117; /* GitHub dark background */
+  scroll-behavior: smooth !important;
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-blob {
+  animation: blob 8s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* GitHub-inspired Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(13, 17, 23, 0.8); /* GitHub dark background */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(33, 136, 255, 0.1); /* GitHub blue accent */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(33, 136, 255, 0.3); /* GitHub blue */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 20px;
+  border: 1px solid rgba(88, 166, 255, 0.2); /* Lighter GitHub blue */
+  box-shadow: inset 0 0 20px rgba(33, 136, 255, 0.2),
+    0 0 10px rgba(33, 136, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(33, 136, 255, 0.5);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  box-shadow: inset 0 0 30px rgba(33, 136, 255, 0.3),
+    0 0 15px rgba(33, 136, 255, 0.3);
+}
+
+/* When scrollbar is in active/clicked state */
+::-webkit-scrollbar-thumb:active {
+  background: rgba(33, 136, 255, 0.6);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  box-shadow: inset 0 0 40px rgba(33, 136, 255, 0.4),
+    0 0 20px rgba(33, 136, 255, 0.4);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+[data-aos] {
+  will-change: transform, opacity !important;
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 200%;
+  }
+}
+.animate-shine {
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+/* GitHub-inspired color variables you can use */
+:root {
+  --gh-bg-primary: #0d1117;
+  --gh-bg-secondary: #161b22;
+  --gh-bg-tertiary: #21262d;
+  --gh-border: #30363d;
+  --gh-text-primary: #f0f6fc;
+  --gh-text-secondary: #8b949e;
+  --gh-blue: #2188ff;
+  --gh-blue-light: #58a6ff;
+  --gh-blue-dark: #1f6feb;
+  --gh-accent: rgba(33, 136, 255, 0.1);
+}
+
+/* Additional GitHub-style utilities */
+.gh-card {
+  background: var(--gh-bg-secondary);
+  border: 1px solid var(--gh-border);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.gh-card:hover {
+  border-color: var(--gh-blue);
+  box-shadow: 0 0 0 1px var(--gh-blue);
+}
+
+.gh-button {
+  background: var(--gh-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.gh-button:hover {
+  background: var(--gh-blue-dark);
+  box-shadow: 0 0 0 3px rgba(33, 136, 255, 0.4);
+}
+
+.gh-text-primary {
+  color: var(--gh-text-primary);
+}
+
+.gh-text-secondary {
+  color: var(--gh-text-secondary);
+}
+
+.gh-border {
+  border-color: var(--gh-border);
+}
+
+.gh-bg-primary {
+  background-color: var(--gh-bg-primary);
+}
+
+.gh-bg-secondary {
+  background-color: var(--gh-bg-secondary);
+}
+
+/* Enhanced blob animations with GitHub colors */
+.gh-blob-blue {
+  background: linear-gradient(45deg, var(--gh-blue), var(--gh-blue-light));
+  opacity: 0.6;
+  filter: blur(40px);
+}
+
+.gh-blob-accent {
+  background: linear-gradient(
+    45deg,
+    rgba(33, 136, 255, 0.3),
+    rgba(88, 166, 255, 0.3)
+  );
+  opacity: 0.4;
+  filter: blur(60px);
+}
