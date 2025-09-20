@@ -28,25 +28,25 @@ const Header = memo(() => (
 ));
 
 const ProfileImage = memo(() => (
-  <div className="flex justify-center items-center p-4 py-6 sm:p-12 sm:py-0 sm:pb-0 min-h-[400px] sm:min-h-[480px]">
+  <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
     <div 
       className="relative group" 
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      {/* GitHub-themed background gradient */}
-      <div className="absolute -inset-8 opacity-[25%] z-0 hidden sm:block">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2188ff] via-[#58a6ff] to-[#1f6feb] rounded-full blur-2xl animate-spin-slower" />
+      {/* Optimized gradient backgrounds with reduced complexity for mobile */}
+      <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1f6feb] via-[#2188ff] to-[#58a6ff] rounded-full blur-2xl animate-spin-slower" />
         <div className="absolute inset-0 bg-gradient-to-l from-[#58a6ff] via-[#2188ff] to-[#1f6feb] rounded-full blur-2xl animate-pulse-slow opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1f6feb] via-[#2188ff] to-[#58a6ff] rounded-full blur-2xl animate-float opacity-50" />
       </div>
 
       <div className="relative">
-        <div className="w-96 h-96 sm:w-[448px] sm:h-[448px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(33,136,255,0.4)] transform transition-all duration-700 group-hover:scale-105">
-          <div className="absolute inset-0 border-6 border-[#30363d]/60 rounded-full z-20 transition-all duration-700 group-hover:border-[#2188ff]/40 group-hover:scale-105" />
+        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(33,136,255,0.3)] transform transition-all duration-700 group-hover:scale-105">
+          <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
           
-          {/* GitHub-themed overlay effects - disabled on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/20 via-transparent to-[#0d1117]/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
+          {/* Optimized overlay effects - disabled on mobile */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2188ff]/20 via-transparent to-[#58a6ff]/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
@@ -58,9 +58,9 @@ const ProfileImage = memo(() => (
 
           {/* Advanced hover effects - desktop only */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#58a6ff]/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-[#2188ff]/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
-            <div className="absolute inset-0 rounded-full border-10 border-[#2188ff]/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
+            <div className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
           </div>
         </div>
       </div>
@@ -70,11 +70,11 @@ const ProfileImage = memo(() => (
 
 const StatCard = memo(({ icon: Icon, color, value, label, description, animation }) => (
   <div data-aos={animation} data-aos-duration={1300} className="relative group">
-    <div className="relative z-10 bg-[#161b22]/80 backdrop-blur-lg rounded-2xl p-6 border border-[#30363d] overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#2188ff]/20 h-full flex flex-col justify-between">
+    <div className="relative z-10 bg-[#161b22]/80 backdrop-blur-lg rounded-2xl p-6 border border-[#30363d] overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
       <div className={`absolute -z-10 inset-0 bg-gradient-to-br ${color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
       
       <div className="flex items-center justify-between mb-4">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#21262d] border border-[#30363d] transition-all duration-300 group-hover:rotate-6 group-hover:border-[#2188ff]/50">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white/10 transition-transform group-hover:rotate-6">
           <Icon className="w-8 h-8 text-[#f0f6fc]" />
         </div>
         <span 
@@ -89,7 +89,7 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 
       <div>
         <p 
-          className="text-sm uppercase tracking-wider text-[#8b949e] mb-2"
+          className="text-sm uppercase tracking-wider text-[#c9d1d9] mb-2"
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-anchor-placement="top-bottom"
@@ -105,7 +105,7 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
           >
             {description}
           </p>
-          <ArrowUpRight className="w-4 h-4 text-[#8b949e] group-hover:text-[#2188ff] transition-colors" />
+          <ArrowUpRight className="w-4 h-4 text-white/50 group-hover:text-[#f0f6fc] transition-colors" />
         </div>
       </div>
     </div>
@@ -113,11 +113,10 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 ));
 
 const AboutPage = () => {
-  // Memoized calculations - using state instead of localStorage for Claude environment
+  // Memoized calculations
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
-    // For demo purposes, using hardcoded values since localStorage isn't available
-    const totalProjects = 15;
-    const totalCertificates = 8;
+    const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+    const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
     const startDate = new Date("2021-11-06");
     const today = new Date();
@@ -125,8 +124,8 @@ const AboutPage = () => {
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
 
     return {
-      totalProjects,
-      totalCertificates,
+      totalProjects: storedProjects.length,
+      totalCertificates: storedCertificates.length,
       YearExperience: experience
     };
   }, []);
@@ -155,7 +154,7 @@ const AboutPage = () => {
     };
   }, []);
 
-  // Memoized stats data with GitHub colors
+  // Memoized stats data
   const statsData = useMemo(() => [
     {
       icon: Code,
@@ -218,34 +217,34 @@ const AboutPage = () => {
              Seorang lulusan Teknologi Informasi Universitas Muhammadiyah Yogyakarta yang berkarier sebagai Software Engineer. Memiliki ketertarikan besar dalam pengembangan Fullstack, dengan fokus pada pembangunan aplikasi yang efisien, interaktif, dan skalabel, serta selalu berusaha memberikan solusi terbaik dalam setiap proyek yang dikerjakan.
             </p>
 
-            {/* Quote Section with GitHub theme */}
-            <div 
-              className="relative bg-gradient-to-br from-[#2188ff]/5 via-transparent to-[#58a6ff]/5 border border-[#30363d] rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
-              data-aos="fade-up"
-              data-aos-duration="1700"
-            >
-              {/* GitHub-themed floating orbs background */}
-              <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#2188ff]/20 to-[#58a6ff]/20 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#58a6ff]/20 to-[#2188ff]/20 rounded-full blur-lg"></div>
-              
-              {/* Quote icon */}
-              <div className="absolute top-3 left-4 text-[#2188ff] opacity-30">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                </svg>
-              </div>
-              
-              <blockquote className="text-[#8b949e] text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-                "Leveraging AI as a professional tool, not a replacement."
-              </blockquote>
-            </div>
+               {/* Quote Section */}
+      <div 
+        className="relative bg-gradient-to-br from-[#2188ff]/5 via-transparent to-[#58a6ff]/5 border border-gradient-to-r border-[#2188ff]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
+        data-aos="fade-up"
+        data-aos-duration="1700"
+      >
+        {/* Floating orbs background */}
+        <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#2188ff]/20 to-[#58a6ff]/20 rounded-full blur-xl"></div>
+        <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#58a6ff]/20 to-[#2188ff]/20 rounded-full blur-lg"></div>
+        
+        {/* Quote icon */}
+        <div className="absolute top-3 left-4 text-[#2188ff] opacity-30">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+          </svg>
+        </div>
+        
+        <blockquote className="text-[#c9d1d9] text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
+          "Leveraging AI as a professional tool, not a replacement."
+        </blockquote>
+      </div>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
+              <a href="https://drive.google.com/file/d/1hBDZCdDNK9uiXMok5LUnUeDYQ8fJNX_A/view?usp=drivesdk" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
                 data-aos-duration="800"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#2188ff] to-[#58a6ff] text-white font-medium transition-all duration-300 hover:scale-105 hover:from-[#1f6feb] hover:to-[#2188ff] flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl hover:shadow-[#2188ff]/25"
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#2188ff] to-[#58a6ff] text-[#f0f6fc] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl "
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
               </button>
@@ -254,7 +253,7 @@ const AboutPage = () => {
               <button 
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#2188ff]/50 text-[#58a6ff] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#2188ff]/10 hover:border-[#58a6ff]"
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#58a6ff]/50 text-[#58a6ff] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#58a6ff]/10 "
               >
                 <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
               </button>

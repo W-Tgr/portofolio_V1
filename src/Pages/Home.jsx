@@ -324,50 +324,43 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#0d1117] overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%]" id="Home">
-      {/* GitHub-style animated background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -inset-10 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#2188ff] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#58a6ff] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-[#1f6feb] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-      </div>
-
-      <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+      {/* ... background ... */}
+  
+      <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"} pt-16 xs:pt-20 sm:pt-24 md:pt-0`}>  {/* Tambah pt- untuk mobile */}
         <div className="container mx-auto min-h-screen">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-6 xs:gap-8 sm:gap-12 lg:gap-20">
             {/* Left Column */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0">
-              <div className="space-y-4 sm:space-y-6">
+            <div className="w-full lg:w-1/2 space-y-4 xs:space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-0">
+              <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <StatusBadge />
                 <MainTitle />
-
+  
                 {/* Typing Effect */}
-                <div className="h-8 flex items-center">
-                  <span className="text-xl md:text-2xl bg-gradient-to-r from-[#c9d1d9] to-[#f0f6fc] bg-clip-text text-transparent font-light">
+                <div className="h-6 xs:h-8 flex items-center">
+                  <span className="text-lg xs:text-xl md:text-2xl bg-gradient-to-r from-[#c9d1d9] to-[#f0f6fc] bg-clip-text text-transparent font-light">
                     {text}
                   </span>
-                  <span className="w-[3px] h-6 bg-gradient-to-t from-[#2188ff] to-[#58a6ff] ml-1 animate-pulse"></span>
+                  <span className="w-[3px] h-5 xs:h-6 bg-gradient-to-t from-[#2188ff] to-[#58a6ff] ml-1 animate-pulse"></span>
                 </div>
-
+  
                 {/* Description */}
-                <p className="text-base md:text-lg text-[#8b949e] max-w-xl leading-relaxed font-light">
+                <p className="text-sm xs:text-base md:text-lg text-[#8b949e] max-w-xl leading-relaxed font-light">
                   Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
                 </p>
-
+  
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-3 justify-start">
+                <div className="flex flex-wrap gap-2 xs:gap-3 justify-start">
                   {TECH_STACK.map((tech, index) => (
                     <TechStack key={index} tech={tech} />
                   ))}
                 </div>
-
+  
                 {/* CTA Buttons */}
-                <div className="flex flex-row gap-3 w-full justify-start">
+                <div className="flex flex-row gap-2 xs:gap-3 w-full justify-start">
                   <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
                 </div>
-
+  
                 {/* Social Links */}
                 <div className="hidden sm:flex gap-4 justify-start">
                   {SOCIAL_LINKS.map((social, index) => (
@@ -376,7 +369,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
+  
             {/* Right Column - ID Card */}
             <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
               <IDCard />
@@ -389,8 +382,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      {/* Custom Styles */}
+  
+      {/* Custom Styles - Tambah media queries */}
       <style jsx>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -426,6 +419,33 @@ const Home = () => {
         
         .backface-hidden {
           backface-visibility: hidden;
+        }
+  
+        /* Media Queries for Responsiveness */
+        @media (max-width: 767px) {
+          .min-h-screen {
+            padding-top: 4rem; /* Adjust based on navbar height */
+            padding-bottom: 2rem;
+          }
+          .flex-col {
+            gap: 3rem;
+          }
+          .text-4xl {
+            font-size: 2rem; /* Smaller title on mobile */
+          }
+          .h-6 {
+            height: 1.5rem; /* Adjust typing effect height */
+          }
+          .text-sm {
+            font-size: 0.75rem; /* Smaller description */
+          }
+          .flex-row {
+            flex-direction: column; /* Stack buttons on mobile */
+            gap: 1rem;
+          }
+          .w-[140px] {
+            width: 100%; /* Full width buttons on mobile */
+          }
         }
       `}</style>
     </div>
