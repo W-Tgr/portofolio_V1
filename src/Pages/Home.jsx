@@ -222,9 +222,9 @@ const IDCard = memo(() => {
                   <span className="text-[#c9d1d9] text-xs">https://github.com/W-Tgr</span>
                 </a>
                 
-                <a href="https://www.linkedin.com/in/wilberttgr/" className="flex items-center gap-2 bg-[#21262d] rounded-lg p-2.5 border border-[#30363d] hover:border-[#2188ff] transition-all duration-200">
+                <a href="https://www.linkedin.com/in/wilbert-tegar-771178382/" className="flex items-center gap-2 bg-[#21262d] rounded-lg p-2.5 border border-[#30363d] hover:border-[#2188ff] transition-all duration-200">
                   <Linkedin className="w-4 h-4 text-[#8b949e]" />
-                  <span className="text-[#c9d1d9] text-xs">linkedin.com/in/wilberttgr</span>
+                  <span className="text-[#c9d1d9] text-xs">https://www.linkedin.com/in/wilbert-tegar-771178382/</span>
                 </a>
               </div>
 
@@ -274,11 +274,11 @@ const IDCard = memo(() => {
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
+const WORDS = ["Information Technology (IT) Graduate", "Tech Enthusiast"];
 const TECH_STACK = ["Laravel", "React", "Flutter"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/W-Tgr" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/wilberttgr/" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/wilbert-tegar-771178382/" },
   { icon: Instagram, link: "https://www.instagram.com/wilbert_tgr?igsh=MTkzNGN3NmNwczR1Yg==" }
 ];
 
@@ -345,7 +345,7 @@ const Home = () => {
   
                 {/* Description */}
                 <p className="text-sm xs:text-base md:text-lg text-[#8b949e] max-w-xl leading-relaxed font-light">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  Menciptakan Website & Mobile Apps Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
                 </p>
   
                 {/* Tech Stack */}
@@ -440,11 +440,13 @@ const Home = () => {
             font-size: 0.75rem; /* Smaller description */
           }
           .flex-row {
-            flex-direction: column; /* Stack buttons on mobile */
+            flex-direction: row; /* Tetap horizontal di mobile */
+            flex-wrap: wrap; /* Wrap jika terlalu lebar */
             gap: 1rem;
+            justify-content: center; /* Center tombol di mobile */
           }
-          .w-[140px] {
-            width: 100%; /* Full width buttons on mobile */
+          .w-[160px] {
+            width: calc(50% - 0.5rem); /* Sesuaikan lebar tombol di mobile agar berdampingan */
           }
         }
       `}</style>
